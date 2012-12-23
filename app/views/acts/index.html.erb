@@ -1,0 +1,49 @@
+<% @title = "Listing acts" %>
+
+
+<%= form_for @search do |f| %>
+  <p>
+    <%#= f.label :contracts_act_booked_contains %>
+    <%#= f.text_field :date_of_event_gte %>
+<%= f.datepicker :date_of_event_eq,:dateFormat => "yy-mm-dd",changeMonth: true,changeYear: true %>
+  </p>
+  <p class="button"><%= f.submit "Search", :class => "btn btn-primary btn-large" %></p>
+
+<% end %>
+<% content_for :description do %>
+  <p>Edit this template in <code>app/views/acts/index.html.erb</code>.</p>
+<% end %>
+
+<% content_for :actions do %>
+  <%= link_to new_act_path, class: 'btn btn-primary btn-large pull-right' do %>
+    <%= icon_tag "plus" %> Add Act
+  <% end %>
+<% end %>
+
+<div class="sheet sheet-condensed">
+  <div class="sheet-inner">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+      <% @acts.each do |act| %>
+        <tr>
+          <td><%= act.act_booked
+ %> - <%= link_to act.act_code, profile_path(act.act_code.downcase) %> </td>
+          <td class="actions">
+            <%#= link_to icon_tag("eye-open"), act_profile_path, rel: 'tooltip', title: 'Show' %>
+            <%#= link_to icon_tag("pencil"), edit_act_path(act), rel: 'tooltip', title: 'Edit' %>
+            <%#= link_to icon_tag("trash"), act, rel: 'tooltip', title: 'Delete',
+                        data: { confirm: 'Are you sure?' }, method: :delete %>
+          </td>
+        </tr>
+      <% end %>
+      </tbody>
+    </table>
+  </div><!-- /.sheet-inner -->
+</div><!-- /.sheet -->
+

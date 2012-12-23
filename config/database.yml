@@ -1,0 +1,31 @@
+# SQLite version 3.x
+#   gem install sqlite3
+#
+#   Ensure the SQLite 3 gem is defined in your Gemfile
+#   gem 'sqlite3'
+common: &common
+  adapter: postgresql
+  username: postgres
+  password: shaina # from psql setup, see Postgresql
+  encoding: utf8
+
+
+development:
+  <<: *common
+  #database: wtadb
+  database: wtadb
+  host: localhost
+
+# development:
+#     adapter: sqlite3
+#     database: db/development.sqlite3
+#     pool: 5
+#     timeout: 5000
+
+test:
+  <<: *common
+  database: wtatest
+
+production:
+  <<: *common
+  database: myapp_production
