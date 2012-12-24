@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.7'
+gem 'rails', '3.2.9'
 source 'http://dresssed.com/gems/f0ac74923e447c64069e/'
 gem 'dresssed-gimlet', :require => "dresssed/gimlet"
 gem "meta_search"
