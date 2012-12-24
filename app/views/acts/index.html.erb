@@ -1,6 +1,5 @@
 <% @title = "Listing acts" %>
 
-
 <%= form_for @search do |f| %>
   <p>
     <%#= f.label :contracts_act_booked_contains %>
@@ -19,31 +18,24 @@
     <%= icon_tag "plus" %> Add Act
   <% end %>
 <% end %>
+<%#= debug params[:search] %>
+<% unless params[:search].blank? %>
+<% if params[:search][:date_of_event_eq].blank? %>
+<% flash.alert = 'Pick A Date for your event' %>
+<% else %>
+<% unless params[:search][:date_of_event_eq].blank? %>
+<div class="span8">
+        <ul class="thumbnails">
+         <% @acts.each do |act| %>
+          <li class="span2">
+            <div class="thumbnail">
+              <%= image_tag "http://placehold.it/200x100" %>
 
-<div class="sheet sheet-condensed">
-  <div class="sheet-inner">
-    <table class="table">
-      <thead>
-        <tr>
-          <th>Name</th>
-          <th></th>
-        </tr>
-      </thead>
-      <tbody>
-      <% @acts.each do |act| %>
-        <tr>
-          <td><%= act.act_booked
- %> - <%= link_to act.act_code, profile_path(act.act_code.downcase) %> </td>
-          <td class="actions">
-            <%#= link_to icon_tag("eye-open"), act_profile_path, rel: 'tooltip', title: 'Show' %>
-            <%#= link_to icon_tag("pencil"), edit_act_path(act), rel: 'tooltip', title: 'Edit' %>
-            <%#= link_to icon_tag("trash"), act, rel: 'tooltip', title: 'Delete',
-                        data: { confirm: 'Are you sure?' }, method: :delete %>
-          </td>
-        </tr>
-      <% end %>
-      </tbody>
-    </table>
-  </div><!-- /.sheet-inner -->
-</div><!-- /.sheet -->
-
+          <%= link_to act.name, profile_path(act.actcode.downcase), :class => "nametag" %>
+          </li>
+<% end %>
+        </ul>
+      </div>
+<% end %>
+<% end %>
+<% end %>

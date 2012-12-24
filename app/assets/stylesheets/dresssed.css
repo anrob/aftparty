@@ -22,3 +22,24 @@
   width: auto;
 }
 */
+
+.frsc {
+    background-image: url('wood1full.jpg');
+}
+
+a.nametag {
+    font-size: 11px;
+    font-weight: bold;
+    line-height: 27px;
+    color: #0096ff;
+}
+
+
+p.description {
+    line-height: 23px;
+}
+
+
+#content div.span8 ul.thumbnails li.span2 div.thumbnail {
+    text-align: center;
+}

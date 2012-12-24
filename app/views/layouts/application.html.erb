@@ -4,7 +4,7 @@
   <div class="page-header">
     <div class="row">
       <div class="span7">
-        <h2><%= @title %></h2>
+        <h2><%#= @title %></h2>
         <%= yield :description %>
       </div>
       <div class="span2">
@@ -15,7 +15,8 @@
 
   <div class="row">
     <div id="content" class="span9">
-      <%= yield %>            
+
+      <%= yield %>
     </div> <!-- /#content -->
 
     <div id="sidebar" class="span3">

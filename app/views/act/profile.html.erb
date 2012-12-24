@@ -1,8 +1,9 @@
-<% if @user %>
-  <h1><%= @user.name %> - <%= link_to "edit", edit_act_path(@user) %></h1>
-<%=raw  @user.videocode unless @user.videocode.blank?%>
-  <p class="description"><%= @user.description unless @user.blank? %></p>
+<% @title = "Pricing" %>
 
+<div class="hero-unit">
+  <h1>Low prices, big value.</h1>
+  <h2>Coffee buzz for the price of a latte.</h2>
+</div>
 
 <section id="pricing">
   <table class="table table-striped">
@@ -26,9 +27,9 @@
     <tfoot>
       <tr>
         <td></td>
-        <td><%= link_to "Book Today", '#', :class => 'btn btn-large' %></td>
-        <td><%= link_to "Book Today", '#', :class => 'btn btn-large btn-info' %></td>
-        <td><%= link_to "Book Today", '#', :class => 'btn btn-large' %></td>
+        <td><%= link_to "Sign Up", '#', :class => 'btn btn-large' %></td>
+        <td><%= link_to "Sign Up", '#', :class => 'btn btn-large btn-info' %></td>
+        <td><%= link_to "Sign Up", '#', :class => 'btn btn-large' %></td>
       </tr>
     </tfoot>
     <tbody>
@@ -68,8 +69,3 @@
     </tbody>
   </table>
 </section>
-
-<div class="fb-comments" data-href="http://confirmmygig.com" data-width="470" data-num-posts="2"></div>
-<% else %>
-  <h1>No User Profile for: <%= @screen_name %></h1>
-<% end %>
