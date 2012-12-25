@@ -6,5 +6,5 @@ class Contract < ActiveRecord::Base
    default_scope  conditions: { contract_status: ["Contract Received","Booked","Contract Sent", "Booked- PAY ACT","Complimentary","Promotional","Promo- WTA to pay"]}
    scope :mitzvah, where("type_of_event LIKE ? OR type_of_event LIKE ? OR type_of_event LIKE ?", "Bar%", "Bat%", "B'n%")
    scope :style, where("act_form LIKE ?","Variety Music").order('act_booked ASC')
-
+   #scope :nottoday, lambda { |user| where("date_of_event = ?", user)}
 end

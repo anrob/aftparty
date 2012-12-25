@@ -6,9 +6,8 @@ class ActsController < ApplicationController
     @search = Contract.mitzvah.style.search(params[:search])
     @actlistit = @search.all.collect { |obj| obj.act_code.downcase }.uniq
     @actslist = Act.find_all_by_actcode(@actlistit)
-    #@acts = @search.all#.collect { |obj| obj.act_code }.uniq
-    @acts = @actslist #.collect { |obj| obj.act_code }.uniq
-
+    @actd = Act.all
+    @acts = @actd - @actslist #.collect { |obj| obj.act_code }.uniq
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @acts }

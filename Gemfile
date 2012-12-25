@@ -9,6 +9,7 @@ gem 'jquery-ui-rails'
 gem 'jquery_datepicker'
 gem 'simple_form'
 gem 'stripe'
+gem 'activeadmin'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'

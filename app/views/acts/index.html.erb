@@ -31,7 +31,7 @@
             <div class="thumbnail">
               <%= image_tag "http://placehold.it/200x100" %>
 
-          <%= link_to act.name, profile_path(act.actcode.downcase), :class => "nametag" %>
+          <%= link_to act.name, profile_path(act.actcode,:date_of_event => params[:search][:date_of_event_eq]), :class => "nametag", %>
           </li>
 <% end %>
         </ul>
